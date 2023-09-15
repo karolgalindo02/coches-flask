@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Flask | Proyecto {endblock %}</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+
+		<!-- Start Header/Navigation -->
+		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Coches navigation bar">
+
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Coches<span>.</span></a>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCoches" aria-controls="navbarsCoches" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsCoches">
+					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                        <li><a class="nav-link" href="{{ url_for('coches') }}">Inicio</a></li>
+                        <li><a class="nav-link" href="{{ url_for('insertar_coche') }}">Crear Coche</a></li>
+                        <li><a class="nav-link" href="{{ url_for('coches') }}">Listado de Coches</a></li>
+                        <li><a class="nav-link" href="{{ url_for('contacto') }}">Contacto</a></li>
+					</ul>
+
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+						<li><a class="nav-link" href="#"><img src="static/images/user.svg"></a></li>
+						<li><a class="nav-link" href="#"><img src="static/images/cart.svg"></a></li>
+					</ul>
+				</div>
+			</div>
+				
+		</nav>
+		<!-- End Header/Navigation -->
+    <section id="content">{% block content %} {% endblock %}</section>
+		<!-- Start Footer Section -->
+		<footer class="footer-section">
+			<div class="container relative">
+
+				<div class="sofa-img">
+					<img src="static/images/car2.png" alt="Image" class="img-fluid">
+				</div>
+
+			
+
+				<div class="row g-5 mb-5">
+					<div class="col-lg-4">
+						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Coches<span>.</span></a></div>
+						<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant</p>
+
+						<ul class="list-unstyled custom-social">
+							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-8">
+						<div class="row links-wrap">
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="#">About us</a></li>
+									<li><a href="#">Services</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="#">Contact us</a></li>
+								</ul>
+							</div>
+
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="#">Support</a></li>
+									<li><a href="#">Knowledge base</a></li>
+									<li><a href="#">Live chat</a></li>
+								</ul>
+							</div>
+
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="#">Jobs</a></li>
+									<li><a href="#">Our team</a></li>
+									<li><a href="#">Leadership</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="#">Chevrolet</a></li>
+									<li><a href="#">BMW</a></li>
+									<li><a href="#">Mercedes Benz</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+	
+
+
+					</div>
+				</div>
+
+			</div>
+		</footer>
+		<!-- End Footer Section -->	
+
+
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/tiny-slider.js"></script>
+		<script src="js/custom.js"></script>
+  </body>
+</html>

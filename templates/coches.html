@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Coches
+{% endblock %}
+
+{% block content %}
+    <!-- Start Product Section -->
+    <div class="product-section">
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap;">
+                <!-- Start Column 1 -->
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                    <h2 class="mb-4 section-title">Coches agregados.</h2>
+                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
+                    <p><a class="btn">Explore</a></p>
+                </div> 
+                <!-- End Column 1 -->
+
+                <!-- Start displaying coches -->
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                    <!-- Recorrido de la información -->
+                    <!-- Creación variable "coche" que almacenará info de la variable "coches" del método -->
+                    {% for coche in coches %}
+                        <div class="coche-item">
+                            <h2><a>{{ coche.1 }}</a></h2>
+                            <p>{{ coche.2 }} | {{ coche.3 }}</p>
+                            <p>{{ coche.4 }}</p>
+                            <p>
+                                <a class="btn" href="{{ url_for('editar_coche', coche_id=coche.0) }}">Editar</a> 
+                                <a class="btn" href="{{ url_for('borrar_coche', coche_id=coche.0) }}">Eliminar</a>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- End displaying coches -->
+
+            </div>
+        </div>
+    </div>
+    <!-- End Product Section -->
+{% endblock %}

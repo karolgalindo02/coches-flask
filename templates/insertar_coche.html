@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Coches
+{% endblock %}
+
+{% block content %}
+    <div class="untree_co-section">
+        <div class="container">
+            <div class="block">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-8 pb-4">
+                        {% if coche %}
+                            <h1>Editar Coche: {{ coche.1 }} {{ coche.2 }}</h1>
+                        {% else %}
+                            <h1>Insertar Coche</h1>
+                        {% endif %}
+                        <form action="" method="POST">
+                            <label for="marca">Marca</label>
+                            <input type="text" name="marca" {% if coche %} value="{{ coche.1 }}" {% endif %} />
+                            <br/><br/>
+                            <label for="modelo">Modelo</label>
+                            <input type="text" name="modelo" {% if coche %} value="{{ coche.2 }}" {% endif %} />
+                            <br/><br/>
+                            <label for="precio">Precio</label>
+                            <input type="number" name="precio" {% if coche %} value="{{ coche.3 }}" {% endif %} />
+                            <br/><br/>
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" name="ciudad" {% if coche %} value="{{ coche.4 }}" {% endif %} />
+                            <br/><br/>
+                            <input class="btn" type="submit" value="Guardar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
